@@ -11,6 +11,7 @@ import org.w3c.dom.Text;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.PagerAdapter;
 
 import static uz.ussd.Constants.colors;
@@ -33,17 +34,17 @@ public class ViewPagerAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
 
-        ViewGroup group = (FrameLayout) LayoutInflater.from(mContext).inflate(R.layout.vp_item, container, false);
+        ViewGroup group = (CardView) LayoutInflater.from(mContext).inflate(R.layout.vp_item, container, false);
         TextView textView = group.findViewById(R.id.vpTextView);
         textView.setText(ops[position]);
         textView.setBackgroundColor(colors[position]);
         container.addView(group);
-        return textView;
+        return group;
     }
 
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        container.removeView((TextView) object);
+        container.removeView((CardView) object);
     }
 
     @Override

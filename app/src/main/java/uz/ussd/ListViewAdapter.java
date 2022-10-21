@@ -2,6 +2,7 @@ package uz.ussd;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -35,10 +36,10 @@ public class ListViewAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        TextView textView = new TextView(mContext);
+        ViewGroup viewGroup1 = (ViewGroup) LayoutInflater.from(mContext).inflate(R.layout.listview_item, null, false);
+        TextView textView = viewGroup1.findViewById(R.id.listview_tv);
         textView.setText(list[i]);
         textView.setTextColor(Color.WHITE);
-        textView.setTextSize(35);
         textView.setBackgroundColor(mColor);
         return textView;
     }
