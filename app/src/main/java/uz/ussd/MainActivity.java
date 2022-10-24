@@ -48,8 +48,7 @@ public class MainActivity extends AppCompatActivity {
         prepareOperators();
 
         setPageListContent(0);
-
-    }
+     }
 
     private void prepareOperators() {
         String[] mobiuzItems = {"News", "USSD", "Internet", "Services", "SSM and calls", "MobiUZ bonuses"};
@@ -64,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
         listViewContents.add(beelineItems);
         listViewContents.add(uzmobileItems);
     }
+
+
 
     private void setPageListContent(int position) {
         String[] list = listViewContents.get(position);
